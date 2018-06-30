@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)touchCardButton:(UIButton *)sender;
+
 
 @end
+
 
