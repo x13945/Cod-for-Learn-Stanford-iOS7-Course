@@ -38,13 +38,16 @@
     if ([sender.currentTitle length]) {
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
+        self.flipCount++;
     } else {
         Card *playingCard = [self.deck drawRandomCard];
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
-        [sender setTitle:[playingCard content] forState:UIControlStateNormal];
+        if(playingCard){
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+            [sender setTitle:[playingCard content] forState:UIControlStateNormal];
+            self.flipCount++;
+        }
     }
 
-    self.flipCount++;
 
 }
 @end
